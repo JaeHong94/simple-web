@@ -1,0 +1,27 @@
+.alert-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 8px;
+  height: 80px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.alert-box:nth-of-type(1) {
+  background: indianred;
+}
+.alert-box:nth-of-type(2) {
+  background: royalblue;
+}
+.alert-box:nth-of-type(3) {
+  background: lightpink;
+}
+.alert-box:nth-of-type(4) {
+  background: yellowgreen;
+}
+.alert-box p {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
