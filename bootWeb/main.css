@@ -13,9 +13,18 @@
   padding: 20px;
   border-radius: 8px;
 }
-
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.nav-sub {
+  display: none;
+}
 .main-background {
   background-image: url('images/scenery.jpg');
   background-size: cover;
   color: white;
+  border-radius: 0;
 }
