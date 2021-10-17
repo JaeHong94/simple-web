@@ -14,6 +14,10 @@
 </head>
 <body>
 
+<div class="left-menu">
+  <p>Menu Title</p>
+</div>
+
 <div class="black-background">
   <div class="white-background">
     <p>로그인하세요.</p>
@@ -50,6 +54,7 @@
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <a class="btn btn-primary btn-lg" id="login" href="#" role="button">LogIn</a>
+  <a class="btn btn-danger btn-lg" id="show-menu" href="#" role="button">Show Menu</a>
 </div>
 
 
@@ -57,22 +62,43 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 <script>
+  $('#show-menu').on('click', function () {
+    $('.left-menu').animate({ marginLeft: '0' }, 500);
+  });
+
   $('form').on('submit', function (e) {
-    if ($('#email').val() === '') {
+    const email = $('#email').val();
+    const psw = $('#psw').val();
+    if (!/\S+@\S+.\S+/.test(email)) {
+      e.preventDefault();
+    } else if(email === ''){
       e.preventDefault();
       $('.email-alert').show();
     }
-    if ($('#psw').val() === '') {
+    if (!/[A-Z]+/.test(psw)) {
       e.preventDefault();
       $('.psw-alert').show();
     }
+    // if ($('#email').val() === '') {
+    //   e.preventDefault();
+    //   $('.email-alert').show();
+    // }
+    // if ($('#psw').val() === '') {
+    //   e.preventDefault();
+    //   $('.psw-alert').show();
+    // }
   });
+
+  // ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}
+
   $('#login').on('click', function () {
-    $('.black-background').fadeIn();
+    $('.black-background').addClass('slide-down');
   });
+
   $('#close').on('click', function () {
-    $('.black-background').fadeOut();
+    $('.black-background').removeClass('slide-down');
   });
+
   $('#nav-sub-button').on('click', function () {
     $('.nav-sub').slideToggle();
   });

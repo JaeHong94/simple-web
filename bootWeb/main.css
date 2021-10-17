@@ -1,10 +1,23 @@
+.left-menu {
+  width: 150px;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  position: fixed;
+  margin-left: -150px;
+}
 .black-background {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 5;
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
+  transform: translateY(-100vh);
+  transition: all 0.5s;
+}
+.black-background.slide-down {
+  transform: translateY(0);
 }
 .white-background {
   background: #fff;
