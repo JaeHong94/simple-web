@@ -45,3 +45,24 @@
   color: white;
   border-radius: 0;
 }
+.slide-container {
+  width: 300vw;
+  display: flex;
+  transition: all 0.8s;
+}
+.slide-box {
+  width: 100vw;
+}
+.slide-box img {
+  width: 100%;
+}
+.slide-next {
+  position: absolute;
+  top: 45%;
+  right: 0;
+}
+.slide-prev {
+  position: absolute;
+  top: 45%;
+  left: 0;
+}

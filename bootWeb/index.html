@@ -57,6 +57,29 @@
   <a class="btn btn-danger btn-lg" id="show-menu" href="#" role="button">Show Menu</a>
 </div>
 
+<h4 class="my-r text-center">Showcase</h4>
+<div style="overflow: hidden; position: relative">
+  <div class="slide-container">
+    <div class="slide-box">
+      <img src="./images/shirt1.jpg" alt="">
+    </div>
+    <div class="slide-box">
+      <img src="./images/shirt2.jpg" alt="">
+    </div>
+    <div class="slide-box">
+      <img src="./images/shirt3.jpg" alt="">
+    </div>
+  </div>
+  <button class="slide-next">Next</button>
+  <button class="slide-prev">Prev</button>
+</div>
+
+<button class="slide-1">1</button>
+<button class="slide-2">2</button>
+<button class="slide-3">3</button>
+
+<div class="my-5"></div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
@@ -71,7 +94,7 @@
     const psw = $('#psw').val();
     if (!/\S+@\S+.\S+/.test(email)) {
       e.preventDefault();
-    } else if(email === ''){
+    } else if (email === '') {
       e.preventDefault();
       $('.email-alert').show();
     }
@@ -101,6 +124,30 @@
 
   $('#nav-sub-button').on('click', function () {
     $('.nav-sub').slideToggle();
+  });
+
+  $('.slide-1').click(function () {
+    $('.slide-container').css({ transform: 'translateX(0vw)' });
+  });
+  $('.slide-2').click(function () {
+    $('.slide-container').css({ transform: 'translateX(-100vw)' });
+  });
+  $('.slide-3').click(function () {
+    $('.slide-container').css({ transform: 'translateX(-200vw)' });
+  });
+
+  let photo = 1;
+  $('.slide-next').click(function () {
+    if (photo < 3) {
+      $('.slide-container').css({ transform: `translateX(-${ photo }00vw)` });
+      photo += 1;
+    }
+  });
+  $('.slide-prev').click(function () {
+    if (photo > 1) {
+      $('.slide-container').css({ transform: `translateX(-${ photo - 2 }00vw)` });
+      photo -= 1;
+    }
   });
 </script>
 </body>
