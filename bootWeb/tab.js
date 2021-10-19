@@ -1,6 +1,8 @@
-for(let i = 0; i < 3; i++) {
-  $('.tab-button').eq(i).click(function () {
-    $('.tab-button').removeClass('active').eq(i).addClass('active');
-    $('.tab-content').removeClass('show').eq(i).addClass('show');
-  })
+$('.list').click(function (e) {
+  tabMenu(e.target.dataset.id);
+});
+
+function tabMenu(sequence) {
+  $('.tab-button').removeClass('active').eq(sequence).addClass('active');
+  $('.tab-content').removeClass('show').eq(sequence).addClass('show');
 }
