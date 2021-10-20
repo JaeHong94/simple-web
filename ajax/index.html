@@ -34,6 +34,12 @@
       $('.card-img-top').attr('src', data.img);
     });
   });
+  $.ajax({
+    url: 'https://jsonplaceholder.typicode.com/todos',
+    type: 'GET'
+  }).done(function (data) {
+    console.log(data);
+  });
 </script>
 </body>
 </html>
