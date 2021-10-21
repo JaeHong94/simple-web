@@ -64,6 +64,8 @@
 .slide-container {
   width: 300vw;
   display: flex;
+}
+.transforming {
   transition: all 0.8s;
 }
 .slide-box {
