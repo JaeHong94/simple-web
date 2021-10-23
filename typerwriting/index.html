@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="./main.css">
+  <title>Hello, world!</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div>
+  <button>버튼</button>
+  <h1>abcd</h1>
+</div>
+
+<script>
+  let font = document.querySelector('h1');
+  let originFont = document.querySelector('h1').innerHTML;
+  const button = document.querySelector('button');
+
+  button.addEventListener('click', function () {
+    font.innerHTML = '';
+    for (let i = 0; i < originFont.length; i++) {
+      setTimeout(() => {
+        font.innerHTML += originFont[i];
+      }, 500 * (i + 1));
+    }
+  });
+</script>
+</body>
+</html>
